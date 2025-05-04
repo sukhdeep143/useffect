@@ -4,6 +4,7 @@ import './App.css'
 function App() {
   const [product, SetProduct] = useState([]);
   const [fetching, setFetching] = useState(true);
+  // const [colour, setColour ] = useState("red")
 
   useEffect(() => {
     async function trying_to_get_data() {
@@ -25,11 +26,14 @@ function App() {
   return (
     <>
       <h1>This is a simple useEffect hook</h1>
+      <h1 className='bg-red-700'>Change the colour of the button using this button</h1>
+      <button className='p-10 bg-pink-500 '>Click Me To change the colour</button>
       {fetching ? (
         <p>Loading data...</p>
       ) : (
         <ul>
           {product.map((post) => (
+
             <li key={post.id}> {post.title}</li> // FIXED: use post.title
           ))}
         </ul>
